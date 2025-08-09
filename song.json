@@ -1,7 +1,12 @@
-[
-  {
-    "title": "Shiva-Thai Hoang",
-    "artist": "Jerry Eban",
-    "url": "https://files.catbox.moe/99i8nm.mp3"
-  }
-]
+const express = require('express');
+const app = express();
+
+const songs = [
+  { title: "Shiva", artist: "Thai Hoang", url: "https://files.catbox.moe/99i8nm.mp3" }
+];
+
+app.get('/songs', (req, res) => {
+  res.json(songs);
+});
+
+app.listen(3000, () => console.log('API chạy trên cổng 3000'));
